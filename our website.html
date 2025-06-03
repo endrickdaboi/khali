@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Endrick-velant website</title>
+    <style>
+        /* ======= CSS Styles ======= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            background-color: navy;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        header h1 {
+            margin-bottom: 5px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            background-color: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255,255,255,0.4);
+        }
+
+        main section {
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: navy;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            word-break: break-word;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .highlight {
+            background-color: #ffffcc;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 10px;
+        }
+
+        form input {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        form button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: navy;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: darkblue;
+        }
+
+        #formMessage {
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+        }
+
+        #todoApp {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #todoApp input {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        #todoApp button {
+            width: 120px;
+            padding: 8px;
+            background-color: navy;
+            color: white;
+            border: none;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+
+        #todoApp button:hover {
+            background-color: darkblue;
+        }
+
+        #taskList {
+            margin-top: 10px;
+        }
+
+        #taskList li {
+            background-color: #f1f1f1;
+            margin-bottom: 5px;
+            padding: 8px;
+            border-radius: 3px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            color: #555;
+            border-top: 1px solid #ccc;
+            margin-top: 20px;
+        }
+
+        /* ======= Media Queries ======= */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            table, th, td {
+                font-size: 14px;
+            }
+
+            form input, form button, #todoApp input, #todoApp button {
+                width: 100%;
+            }
+
+            #todoApp button {
+                align-self: stretch;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            table, th, td {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DATA TASKER</h1>
+        <nav>
+            <a href="#tableSection">Table</a>
+            <a href="#formSection">Form</a>
+            <a href="#todoSection">To-Do List</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Table -->
+        <section id="tableSection">
+            <h2>User Data Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>valentin</td>
+                        <td>28</td>
+                        <td>ishimwevalent@gmail.com</td>
+                        <td class="highlight">Active</td>
+                    </tr>
+                    <tr>
+                        <td>akecyusaendrick</td>
+                        <td>35</td>
+                        <td>akecyusaendrick@gmail.com</td>
+                        <td>Inactive</td>
+                    </tr>
+                    <tr>
+                        <td>emmanuel</td>
+                        <td>42</td>
+                        <td>emmanuel@gmail.com</td>
+                        <td class="highlight">Active</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 2: Form -->
+        <section id="formSection">
+            <h2>Registration Form</h2>
+            <form id="registrationForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age">
+
+                <button type="submit">Register</button>
+            </form>
+            <div id="formMessage"></div>
+        </section>
+
+        <!-- Section 3: To-Do List -->
+        <section id="todoSection">
+            <h2>Interactive To-Do List</h2>
+            <div id="todoApp">
+                <input type="text" id="newTask" placeholder="Enter a new task">
+                <button id="addTaskBtn">Add Task</button>
+                <ul id="taskList"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Responsive Web Project. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // ======= JavaScript Code =======
+
+        // Variables & Operators Example
+        let projectName = "My Comprehensive Responsive Web Project";
+        let tasksCompleted = 7;
+        let totalTasks = 10;
+        let completionPercentage = (tasksCompleted / totalTasks) * 100;
+
+        console.log("Project: " + projectName);
+        console.log("Completion: " + completionPercentage + "%");
+
+        // Conditional Statements
+        if (completionPercentage >= 70) {
+            console.log("Great progress! Keep going!");
+        } else {
+            console.log("You need to complete more tasks!");
+        }
+
+        // Form Handling
+        const registrationForm = document.getElementById('registrationForm');
+        const formMessage = document.getElementById('formMessage');
+
+        registrationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const age = document.getElementById('age').value;
+
+            if (fullName && email && age) {
+                formMessage.textContent = `Thank you for registering, ${fullName}!`;
+                formMessage.style.color = 'green';
+            } else {
+                formMessage.textContent = "Please fill out all the fields.";
+                formMessage.style.color = 'red';
+            }
+        });
+
+        // To-Do List Functionality
+        const newTaskInput = document.getElementById('newTask');
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        const taskList = document.getElementById('taskList');
+
+        addTaskBtn.addEventListener('click', function() {
+            const taskText = newTaskInput.value.trim();
+            if (taskText !== "") {
+                const li = document.createElement('li');
+                li.textContent = taskText;
+
+                // Add delete button
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = "Delete";
+                deleteBtn.style.marginLeft = "10px";
+                deleteBtn.style.backgroundColor = "red";
+                deleteBtn.style.color = "white";
+                deleteBtn.style.border = "none";
+                deleteBtn.style.padding = "5px";
+                deleteBtn.style.cursor = "pointer";
+
+                deleteBtn.addEventListener('click', function() {
+                    li.remove();
+                });
+
+                li.appendChild(deleteBtn);
+                taskList.appendChild(li);
+                newTaskInput.value = "";
+            }
+        });
+    </script>
+</body>
+</html>
